@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  background: rgba(0,0,0,0.8);
+  color: rgba(255,255,255,0.8);
+  font: 150% 'Lato', sans-serif;
+  text-align: center;
+  padding: 2%;
+}
+#pomodoro {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 2fr;
+  grid-template-areas: 
+    'session'
+    'reset'
+    'display'
+}
+#break, #session, #reset {
+  font-size: 125%;
+  text-align: center;
+  width: 25%;
+  padding: 2%;
+}
+#break {
+  grid-area: break;
+}
+#session {
+  grid-area: session;
+}
+#button-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#reset{
+  grid-area: reset;
+  background: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.8);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#display {
+  grid-area: display;
+  background: rgba(255,255,255,1);
+  color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 300%;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  border-radius: 50%;
+  border: 5px solid red;
+  box-shadow: 
+    -5px -5px 50px rgba(0,0,0,0.5),
+    5px 5px 50px rgba(0,0,0,0.2) inset;
+}
+
+@media only screen and (min-width: 768px) {
+  #pomodoro {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas: 
+      'session reset'
+      'display display'
+  }
+  #reset {
+    padding: 5px 50px;
+  }
+  #display {
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    border-radius: 50%;
+    border: 5px solid red;
+  }
+}
