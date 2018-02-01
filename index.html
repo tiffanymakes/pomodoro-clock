@@ -15,11 +15,6 @@
 <body>
 
   <section id="pomodoro">
-  <!--<section id="break-section">
-    <h2>Break</h2>
-    <label for="break"></label>
-    <input id="break" name="break" type="number" value="5">
-  </section>-->
   <section id="session-section">
     <h2>Session</h2>
     <label for="session"></label>
@@ -28,11 +23,12 @@
   <section id="button-section">
     <button type="button" id="reset">Reset</button>
   </section>
-  <section id="display">
-    <div></div>
-  </section>
+  <section id="text">Click Timer to Start/Restart</section>
+  <audio loop id="play" src="http://www.soundjay.com/button/beep-07.wav"></audio>
+  <section id="display"></section>
 </section>
-  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/SoundJS/1.0.1/soundjs.js'></script>
+
   
 
     <script  src="js/index.js"></script>

@@ -14,16 +14,16 @@ body {
 #pomodoro {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 2fr;
+  grid-template-rows: repeat(3,1fr) 2fr;
   grid-template-areas: 
     'session'
     'reset'
+    'text'
     'display'
 }
 #break, #session, #reset {
   font-size: 125%;
   text-align: center;
-  width: 25%;
   padding: 2%;
 }
 #break {
@@ -31,6 +31,7 @@ body {
 }
 #session {
   grid-area: session;
+  width: 25%;
 }
 #button-section {
   display: flex;
@@ -44,6 +45,9 @@ body {
   border: 1px solid black;
   border-radius: 5px;
 }
+#text {
+  grid-area: text;
+}
 #display {
   grid-area: display;
   background: rgba(255,255,255,1);
@@ -52,8 +56,8 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 300%;
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   margin: auto;
   border-radius: 50%;
   border: 5px solid red;
@@ -64,19 +68,15 @@ body {
 
 @media only screen and (min-width: 768px) {
   #pomodoro {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 3fr;
     grid-template-areas: 
-      'session reset'
-      'display display'
-  }
-  #reset {
-    padding: 5px 50px;
+      'session text reset'
+      'display display display'
   }
   #display {
     height: 400px;
     width: 400px;
-    margin: auto;
     border-radius: 50%;
     border: 5px solid red;
   }
